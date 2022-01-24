@@ -1,0 +1,58 @@
+* {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          background: #000;
+}
+
+.card {
+          max-width: 400px;
+          text-align: center;
+}
+
+.card * {
+          --popout: 0px;
+          --rotation: 50deg;
+          line-height: 1.2;
+          font-weight: 200;
+          animation: movement 4s ease-in-out infinite;
+}
+
+.card h1 {
+          --popout: 20px;
+          color: #CA3216;
+}
+.card h4 {
+          --popout: 15px;
+          margin-top: 0.4rem;
+          margin-bottom: 0.2rem;
+          color: #999;
+}
+
+@keyframes movement {
+          0% {
+                    transform: rotateY(0deg) translateZ(var(--popout));
+          }
+          25% {
+                    transform: rotateY(var(--rotation)) translateZ(var(--popout));
+          }
+          50% {
+                    transform: rotateY(0deg) translateZ(var(--popout));
+          }
+          75% {
+                    transform: rotateY(calc(var(--rotation) * -1)) translateZ(var(--popout));
+          }
+          100% {
+                    transform: rotateY(0deg) translateZ(var(--popout));
+          }
+}
